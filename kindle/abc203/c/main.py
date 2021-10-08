@@ -1,20 +1,18 @@
 n,k = map(int,input().split())
+friends = []
 
-friends  = []
-for i in range(n):
-    friends.append(list(map(int,input().split())))
+for i in range(1,n+1):
+    a,b = list(map(int,input().split()))
+    friends.append([a,b])
 friends.sort()
 
-now_village = 0
-
-now_village += k
+position = k
 
 for i in range(n):
-    friend_village = friends[i][0]
-    friend_money = friends[i][1]
-
-    if friend_village<=now_village:
-        now_village+= friend_money
+    city = friends[i][0]
+    charge = friends[i][1]
+    if city <= position:
+        position += charge
     else:
         break
-print(now_village)
+print(position)
