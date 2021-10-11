@@ -1,37 +1,36 @@
 n = int(input())
-string = input()
+s = [0] + list(input())
 q = int(input())
+isReverse = False
 
-string = "0"+string
-string = list(string)
-
-flip=False
- 
+temp = s
 for i in range(q):
-    t,a,b = map(int,input().split())
+    query = list(map(int,input().split()))
+    t = query[0]
     if t == 1:
-        if flip==False:
-            string[a],string[b] = string[b],string[a]
+        a,b = query[1:]
+        if not isReverse:
+            s[a],s[b] = s[b],s[a]
         else:
             if a <= n:
                 a += n
             else:
-                a-=n
+                a -= n
             if b <= n:
                 b += n
             else:
-                b-=n
-            string[a],string[b] = string[b],string[a]
-        print("".join(ans))
+                b -= n
+            s[a],s[b] = s[b],s[a]    
     else:
-        if flip == True:
-            flip = False
+        if isReverse:
+            isReverse = False
+            tmep = s
         else:
-            flip = True
-        s_left = string[1:n+1]
-        s_right = string[n+1:]
-        if flip == False:
-            ans = s_left+s_right
-        else:
-            ans = s_right+s_left
-        print("".join(ans))
+            isReverse = True
+        
+if not isReverse:
+    s = s[1:n+1]  + s[n+1:] 
+else:
+    s = s[n+1:] + s[1:n+1]
+print("".join(s))
+        

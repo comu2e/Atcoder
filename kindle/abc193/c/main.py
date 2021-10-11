@@ -1,10 +1,9 @@
 n = int(input())
-able_num = set()
-for a in range(2,10**5+10):
+cnt = 0
+able_set = set()
+for a in range(2, 100 + pow(10,5)):
     for b in range(2,100):
-        if a**b <= n:
-            able_num.add(a**b)
-        else:
-            break
-        
-print(n-len(able_num))
+        if pow(a,b) <= n:
+            able_set.add(pow(a,b))
+
+print(n-len(ab))

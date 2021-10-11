@@ -1,13 +1,19 @@
+
 n = int(input())
-arr = []
-i = 1
-while i**2 <= n:
-    if n%i == 0:
-        arr.append(i)
-        if i != n//i:
-            arr.append(n//i)
-    i += 1
-arr.sort()
-for j in arr:
-    print(j)
-     
+
+def divide(n):
+    i = 1
+    divisor = list()
+    while i*i <= n:
+        if n % i == 0:
+            divisor.append(i)
+            divisor.append(n//i)
+        i += 1
+    divisor =set(divisor)
+    return divisor
+
+ans = list(divide(n))
+ans.sort()
+
+for a in ans:
+    print(a)

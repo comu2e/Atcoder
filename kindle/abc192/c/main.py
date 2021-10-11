@@ -1,14 +1,17 @@
+
 n,k = map(int,input().split())
 
-def g(x,is_1):
-    list_x = list(str(x))
-    return int("".join(sorted(list_x,reverse=is_1)))
+def g1(x):
+    listx = list(str(x))
+    listx.sort(reverse=True)
+    return  int("".join(listx))
+def g2(x):
+    listx = list(str(x))
+    listx.sort()
+    return  int("".join(listx))
 
-def f(x):
-    return g(x,True) - g(x,False)
+inita = n
 
-fi = n
-for i in range(k):
-    
-    fi = f(fi)
-print(fi)
+for i in range(1,k+1):
+    inita = g1(inita) - g2(inita)
+print(inita)
