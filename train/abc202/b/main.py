@@ -9,4 +9,4 @@ for st in s:
     else:
         rotate.append(st)
 rotate.reverse()
-print("".join(rotate))
+print("".join(rotate))           
