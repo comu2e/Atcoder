@@ -1,2 +1,3 @@
-n, x, t = map(int, input().split())
-print(t*(n+x-1)/x)
+s = input()
+t = input()
+print(len(s)-len(set(s) & set(t)))

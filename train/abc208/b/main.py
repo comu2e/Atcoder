@@ -1,9 +1,16 @@
 import math
 p = int(input())
-
-fact_yen = list(map(lambda yen:math.factorial(yen),[i+1 for i in range(0,10)]))
-fact_yen.sort(reverse=True)
-print(fact_yen)
-cnt = 0
-for fact in fact_yen:
-    residue = p % fact
+factYen = []
+for i in range(1, 50):
+    if math.factorial(i) <= p:
+        factYen.append(math.factorial(i))
+factYen.sort(reverse=True)
+ans = 0
+for yen in factYen:
+    if p <= 0:
+        break
+    else:
+        factCnt = p//yen
+        p -= factCnt * yen
+        ans += factCnt
+print(ans)
