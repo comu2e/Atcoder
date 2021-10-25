@@ -1,3 +1,3 @@
-s = input()
-t = input()
-print(len(s)-len(set(s) & set(t)))
+import math
+n, x, t = map(int, input().split())
+print(math.ceil(n/x)*t)
