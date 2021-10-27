@@ -1,9 +1,13 @@
-s = input()
-t = input()
+s = list(input())
+t = list(input())
 
-min = len(t)
-
-for i in range(len(s)-len(t)):
-    s_str = s[i:i+len(t)]
-    for idx in range(len(t)):
-        if s_str[idx] == t[idx]:
+length = len(s)
+lengthT = len(t)
+ans = lengthT
+for start in range(length-lengthT+1):
+    diff = 0
+    for i in range(lengthT):
+        if t[i] != s[start+i]:
+            diff += 1
+    ans = min(ans, diff)
+print(ans)
