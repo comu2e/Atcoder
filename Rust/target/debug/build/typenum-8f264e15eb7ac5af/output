@@ -1,2 +1,0 @@
-cargo:rustc-env=TYPENUM_BUILD_OP=/Users/takahashi.eiji/VisualStudio/Atcoder/Rust/target/debug/build/typenum-8f264e15eb7ac5af/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/takahashi.eiji/VisualStudio/Atcoder/Rust/target/debug/build/typenum-8f264e15eb7ac5af/out/op.rs
